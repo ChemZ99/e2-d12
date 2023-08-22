@@ -25,11 +25,13 @@ deletebutton.onclick = function (Event) {
   deleteLastName();
 };
 
+let time = sessionStorage.getItem("timer") ? sessionStorage.getItem("timer") : 0;
+
 const timeradd = function () {
-  let time = undefined ? 0 : JSON.parse(sessionStorage.getItem("timer"));
+  //time = undefined ? 0 : JSON.parse(sessionStorage.getItem("timer"));
   time++;
   counter.innerText = time;
-  sessionStorage.setItem("timer", JSON.stringify(time));
+  sessionStorage.setItem("timer", time);
 };
 
 setInterval(timeradd, 1000);
